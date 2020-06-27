@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	
+	div{
+		margin : 1em;
+
+	}
+	
+	header img{
+		width: 11%;
+		height: 11%;
+	}
+	#rdip{
+		float: right;
+		font-size: 2em;
+		font-family: serif;
+		font-weight: bold;
+		color: #551a8b;
+	}
+	nav{
+		background: #000;
+		color: #FFF;
+		padding: 1em;
+	}
+	nav a{
+		color: #FFF;
+		text-decoration: none;
+		padding-right: 1.3em; 
+	}
+	
+	p{
+		display: inline;
+		font-weight: bold;
+		
+	}
+	#g{padding-right: 6em;}
+	#r{padding-right: 2em;}
+	label{
+		font-weight: bold;
+		margin-bottom: 2em;
+		te
+	}
+	input{
+		margin-bottom: 2em; 
+
+	}
+	#fname{margin-left: 6em;}
+	#phn{margin-left: 8em;}
+	#email{margin-left: 8em;}
+	#clg{margin-left: 8em;}
+		
+	}
+	label[for="declare"]{
+		padding-left: 2em;
+	}
+	input[type="submit"]{
+		margin-right: 5em;
+	}
+
+	
+</style>
+<body>
+<header>
+	<a href="https://www.iiit.ac.in/" target="_blank"><img src="https://www.iiit.ac.in/img/iiit-new.png" alt="IIIT-H"></a>
+	<a  id="rdip" href="https://serc.iiit.ac.in/rdip" target="_blank">RDIP</a>
+</header>
+<nav>
+	<a href="homepage.html">HOME</a>
+	<a href="registration.html">Registration Form</a>
+</nav>
+<div>
+	<form action="details.html" method="GET">
+		<!-- Name -->
+		<label for="fname">First name:</label>
+		<input type="text" name="fname" id="fname" size=30><br>
+		<!-- Mail Id -->
+		<label for="email">E-mail:</label>
+		<input type="email" name="email" id="email" size=30><br>
+		<!-- Phone Number -->
+		<label for="phn">Phone:</label>
+		<input type="tel" name="phn" id="phn" size=30><br>
+		<!-- Gender -->
+		<p id="g">Gender:</p>
+		<input type="radio" name="gender" id="male" value="male">
+		<label for = "male">Male</label>
+		<input type="radio" name="gender" id="female" value="female">
+		<label for="female">Female</label>
+		<input type="radio" name="gender" id="other" value="other">
+		<label for="other">Other</label><br>
+		<!-- Reason -->
+		<p id="r">Reason for RDIP:</p>
+		<input type="checkbox" name="reason" id="html" value="html">
+		<label for = "html">HTML</label>
+		<input type="checkbox" name="reason" id="css" value="css">
+		<label for="css">Female</label>
+		<input type="checkbox" name="reason" id="js" value="js">
+		<label for="js">JavaScript</label><br>
+		<!-- College -->
+		<label for="clg">College:</label>
+		<input type="text" name="clg" id="clg" size=30><br>
+		<!-- Declare -->
+		<input type="checkbox" name="declare" id="declare">
+		<label for="declare">I declare above details given by me are true</label><br>
+		<input type="submit" name="submit" value="Submit">
+		<input type="reset" name="reset" value="Reset"><br>
+	</form>
+</div>
+</body>
+</html>
