@@ -42,7 +42,7 @@
 	label{
 		font-weight: bold;
 		margin-bottom: 2em;
-		te
+		 
 	}
 	input{
 		margin-bottom: 2em; 
@@ -73,7 +73,7 @@
 	<a href="registration.html">Registration Form</a>
 </nav>
 <div>
-	<form action="details.html" method="GET">
+	<form action="details.html" method="GET" onsubmit="return validate();">
 		<!-- Name -->
 		<label for="fname">First name:</label>
 		<input type="text" name="fname" id="fname" size=30 required><br>
@@ -93,7 +93,7 @@
 		<label for="other">Other</label><br>
 		<!-- Reason -->
 		<p id="r">Reason for RDIP:</p>
-		<input type="checkbox" name="reason" id="html" value="html" required>
+		<input type="checkbox" name="reason" id="html" value="html">
 		<label for = "html">HTML</label>
 		<input type="checkbox" name="reason" id="css" value="css" >
 		<label for="css">Female</label>
@@ -103,11 +103,36 @@
 		<label for="clg">College:</label>
 		<input type="text" name="clg" id="clg" size=30 required><br>
 		<!-- Declare -->
-		<input type="checkbox" name="declare" id="declare">
+		<input type="checkbox" name="declare" id="declare" required>
 		<label for="declare">I declare above details given by me are true</label><br>
 		<input type="submit" name="submit" value="Submit">
 		<input type="reset" name="reset" value="Reset"><br>
 	</form>
 </div>
+<script>
+	function validate(){
+		var name = document.getElementById('fname').value;
+		var test = name.search(/[a-zA-Z]/g);
+	
+		if(test == -1){
+			alert("Enter only alphabets");
+			return false;
+		}
+		var checkboxs=document.getElementsByName("reason");
+		var okay=false;
+		for(var i=0,l=checkboxs.length;i<l;i++)
+		{
+			if(checkboxs[i].checked)
+			{
+				okay=true;
+				break;
+			}
+		}
+		
+		 if(okay !== true){alert("Please check a checkbox"); return false;}
+		 //else{alert("Successful !"); return false;}
+	}
+
+</script>
 </body>
 </html>
