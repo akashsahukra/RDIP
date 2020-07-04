@@ -1,0 +1,29 @@
+body{
+    text-align: center;
+
+}
+table{
+    margin: 0 auto 0 auto;
+    width: 21%;
+}
+input{
+    font-size: medium;
+    width: 20em;
+    height: 2em;
+    margin-bottom: 1em;
+
+    border-radius: 20px;
+}
+h1{
+    color: red;
+}
+button{
+    font-size: 1.2em;
+    background-color: aqua;
+    width : 3em;
+    height: 3em;
+}
+#back{
+    background-color: rgb(235, 19, 19);
+}
+
