@@ -171,6 +171,43 @@ $(document).ready(function () {
     }
     $("#ana").click(function () {
         anagram();
-        })
+    })
+    // WHO WILL SURVIVE --------- TASK - 4
+    function who_will_survive() {
+        var st1 = Math.floor(Math.random() * 1001);
+        var st2 = Math.floor(Math.random() * 1001);
+        $(".st1").val(st1)
+        $(".st2").val(st2)
+        
+        st1 = st1 % 3;
+        st2 = st2 % 3;
+        if (st1 == 0 && st1 == 1 || st1 == 1 && st2 == 0) {
+            console.log(st1, st2)
+            $(".winner").css("color", "green")
+            $(".winner").html("HUMAN SURVIVES");
+            return false;
+        }
+        if (st1 == 1 && st1 == 2 || st1 == 2 && st2 == 1) {
+            console.log(st1, st2)
+            $(".winner").css("color", "green")
+            $(".winner").html("COCKROACH SURVIVES");
+            return false;
+        }
+        if (st1 == 2 && st1 == 0 || st1 == 0 && st2 == 2) {
+            console.log(st1, st2)
+            $(".winner").css("color", "green")
+            $(".winner").html("NUCLEAR BOMB SURVIVES");
+            return false;
+        }
+        if (st1 == st2) {
+            console.log(st1, st2)
+            $(".winner").css("color", "red")
+            $(".winner").html("TIE");
+            return false;
+        }
+    }
+    $(".verify").click(function () {
+        who_will_survive();
+    })
     
 })
