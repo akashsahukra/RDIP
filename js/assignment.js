@@ -89,8 +89,8 @@ $(document).ready(function () {
 
     
     // Form validation -------- TASK-2
-    var pattern1, pattern2;
-    $("#submitform").click(function () {
+    function validate() {
+        var pattern1, pattern2;
         if ($("#exampleInputName").val() == "") {
             alert("Name cannot be empty")
             return false;
@@ -122,10 +122,13 @@ $(document).ready(function () {
             alert("Invalid Email address");
             return false;
         }
-    })
+    }
+    $("#submitform").click(function () {
+        validate();
+        })
 
     // Palindrome and Anagrams --------------- TASK - 3
-    $("#pal").click(function () {
+    function palindrome() {
         if ($("#palindrome").val() == "") {
             $(".res1").css("color", "red");
             $(".res1").html("Please provide input");
@@ -141,27 +144,33 @@ $(document).ready(function () {
             $(".res1").html("It's a plaindrome");
             return true;
         }
+    }
+    $("#pal").click(function () {
+        palindrome();
     })
+    
+    function anagram() {
         var s1, s2;
-        $("#ana").click(function () {
-            s1 = $("#ana1").val().split('').sort().join('');
-            s2 = $("#ana2").val().split('').sort().join('');
-            if ($("#ana1").val() == "" || $("#ana2").val() == "") {
-                $(".res2").css("color", "red");
-                $(".res2").html("Inputs cannot be empty")
-                return false;
-            }
-            else if (s1 == s2) {
-                $(".res2").css("color", "green");
-                $(".res2").html("They are anagrams");
-                return true;
-            }
-            else {
-                $(".res2").css("color", "red");
-                $(".res2").html("They are not anagrams");
-                return false;
-            }
-            
+        s1 = $("#ana1").val().split('').sort().join('');
+        s2 = $("#ana2").val().split('').sort().join('');
+        if ($("#ana1").val() == "" || $("#ana2").val() == "") {
+            $(".res2").css("color", "red");
+            $(".res2").html("Inputs cannot be empty")
+            return false;
+        }
+        else if (s1 == s2) {
+            $(".res2").css("color", "green");
+            $(".res2").html("They are anagrams");
+            return true;
+        }
+        else {
+            $(".res2").css("color", "red");
+            $(".res2").html("They are not anagrams");
+            return false;
+        }
+    }
+    $("#ana").click(function () {
+        anagram();
         })
     
 })
