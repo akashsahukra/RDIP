@@ -209,5 +209,24 @@ $(document).ready(function () {
     $(".verify").click(function () {
         who_will_survive();
     })
-    
+    // BONUS TASK
+    function curr_conv() { 
+        request = new XMLHttpRequest();
+        let url = new URL('https://free.currconv.com/api/v7/convert');
+        url.searchParams.set('q', "INR_" + $("#CURR_TO").value);
+        request.open('GET', url);
+        request.send();
+        request.onload = function () {
+            if (request.status != 200) {
+                alert('Error ${xhr.status}: ${xhr.statusText}');
+            } else {
+                alert('Done, got ${xhr.response.length} bytes');
+            }
+        }
+
+    }
+        
+    $("#currconv").click(function () {
+        curr_conv();
+    })
 })
